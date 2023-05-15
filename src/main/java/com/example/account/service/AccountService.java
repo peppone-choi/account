@@ -38,6 +38,7 @@ public class AccountService {
 
         String newAccountNumber = accountRepository
                 .findFirstByOrderByIdDesc()
+                // Math.random() 함수 사용으로 무작위 계좌번호 지정.
                 .map(account -> (Integer.parseInt(account.getAccountNumber())) + (int)(Math.random()*1000000000) + 1 + "")
                 .orElse("1000000000");
 
