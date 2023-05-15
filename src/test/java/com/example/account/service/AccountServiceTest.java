@@ -237,7 +237,7 @@ class AccountServiceTest {
         given(accountRepository.findByAccountNumber(anyString()))
                 .willReturn(Optional.of(Account.builder()
                         .accountUser(pobi).balance(0L)
-                                .accountStatus(AccountStatus.UNREGISTERED)
+                        .accountStatus(AccountStatus.UNREGISTERED)
                         .accountNumber("1000000012").build()));
         // when
         AccountException exception = assertThrows(AccountException.class,
